@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home page</title>
     <link rel="stylesheet" href="./src/styles/output.css" />
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
     <main>
@@ -343,9 +344,88 @@
           </div>
         </div>
       </section>
+
+      <!-- about section -->
+      <section class="py-12 md:py-20 container mx-auto px-4 sm:px-6 lg:px-8">
+        <article class="flex items-center">
+          <div
+            class="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 w-full"
+          >
+            <!-- Image Container -->
+            <div class="w-full md:w-1/2 overflow-hidden rounded-2xl">
+              <img
+                src="https://cms.code4rest.com/wp128/wp-content/uploads/2024/11/Rainy-img.jpg"
+                alt="Weather map showing rainy conditions"
+                class="w-full h-auto object-cover"
+              />
+            </div>
+
+            <!-- Text Content -->
+            <div class="w-full md:w-1/2 p-4 sm:p-6 md:p-8 text-black">
+              <h2 class="text-5xl font-bold mb-4 uppercase tracking-wide">
+                Rainy days bring out the best puddles
+              </h2>
+              <p class="text-base sm:text-lg md:text-[1.2rem] mb-6">
+                There are many variations of passages of available, but majority
+                have suffered alteration in some form, by injected words which
+                don’t look even slightly believable
+              </p>
+
+              <!-- Weather Info List -->
+              <ul class="list-disc pl-5 mb-6 text-base sm:text-lg">
+                <li>UV Index</li>
+                <li>Wind Speed</li>
+                <li>Sunrise & set</li>
+                <li>Humidity</li>
+                <li>Visibility</li>
+                <li>Air Speed</li>
+              </ul>
+
+              <!-- More Info Button -->
+              <button
+                class="bg-orange-500 text-white font-bold py-3 px-6 rounded-full hover:bg-orange-600 transition-colors cursor-pointer"
+              >
+                More Info
+              </button>
+            </div>
+          </div>
+        </article>
+      </section>
+      <!-- Cambodia Forecast section -->
+      <section
+        id="cambodia-forecast"
+        class="py-16 container mx-auto px-4 sm:px-6 lg:px-8"
+      >
+        <div class="text-center mb-10">
+          <h2 class="text-3xl font-bold text-gray-900 mb-2">
+            Cambodia Forecast
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout.
+          </p>
+        </div>
+
+        <!-- First row of province cards -->
+        <div
+          id="first-row"
+          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-4"
+        >
+          <!-- Province cards will be dynamically inserted here -->
+        </div>
+
+        <!-- Second row of province cards -->
+        <div
+          id="second-row"
+          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4"
+        >
+          <!-- Province cards will be dynamically inserted here -->
+        </div>
+      </section>
     </main>
 
     <script src="./src/components/header/Header.js"></script>
     <script src="./src/components/hero-home/Hero.js"></script>
+    <script src="./src/components/Cambodia-Forecast/Cambodia-Forecast.js"></script>
   </body>
 </html>

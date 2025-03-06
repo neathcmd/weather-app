@@ -1,0 +1,26 @@
+.all-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.image {
+  width: 450px;
+  height: 450px;
+}
+
+.section {
+  margin: 10em;
+  border: 2px solid #eee;
+  background-color: blue;
+}
+
+.right-side {
+  border: 2px solid white;
+  /* background-color: black; */
+}
+
+li {
+  margin-bottom: 10px;
+  list-style: disc !important;
+}
