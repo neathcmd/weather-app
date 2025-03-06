@@ -13,32 +13,32 @@ const provinces = [
     lon: 103.2022, // Approximate longitude for Battambang
   },
   {
-    name: "Kampong Province",
-    image: `/src/assets/Kampong-Province.jpg`,
+    name: "KohKong Province",
+    image: `/src/assets/KohKong-Province.jpg`,
     lat: 11.9924, // Approximate latitude for Kampong Cham (representing Kampong Province)
     lon: 105.4645, // Approximate longitude for Kampong Cham
   },
   {
     name: "Prey Veng Province",
-    image: `/src/assets/Prey-Veng-Province.jpg`,
+    image: `/src/assets/PreyVeng-Province.jpg`,
     lat: 11.4868, // Approximate latitude for Prey Veng
     lon: 105.3253, // Approximate longitude for Prey Veng
   },
   {
-    name: "Kampong Thom Province",
-    image: `/src/assets/Kampong-Thom-Province.jpg`,
+    name: "Kampongchhang Province",
+    image: `/src/assets/Kompongchhang-Province.jpg`,
     lat: 12.7111, // Approximate latitude for Kampong Thom
     lon: 104.8887, // Approximate longitude for Kampong Thom
   },
   {
-    name: "Pursat Province",
-    image: `/src/assets/Pursat-Province.jpg`,
+    name: "PreahVihear Province",
+    image: `/src/assets/PreyVeng-Province.jpg`,
     lat: 12.5388, // Approximate latitude for Pursat
     lon: 103.9192, // Approximate longitude for Pursat
   },
   {
     name: "Mondulkiri Province",
-    image: `/src/assets/Mondulkiri-Province.jpg`,
+    image: `/src/assets/Modulkiri-Province.jpg`,
     lat: 12.4555, // Approximate latitude for Mondulkiri
     lon: 107.1878, // Approximate longitude for Mondulkiri
   },
@@ -50,15 +50,15 @@ const provinces = [
   },
   {
     name: "Kampongspeu Province",
-    image: `/src/assets/Kampongspeu-Province.jpg`,
+    image: `/src/assets/Kompongspeu-Province.jpg`,
     lat: 11.6155, // Approximate latitude for Kampong Speu
     lon: 104.5209, // Approximate longitude for Kampong Speu
   },
   {
-    name: "Kampongcham Province",
-    image: `/src/assets/Kampongcham-Province.jpg`,
-    lat: 11.9924, // Approximate latitude for Kampong Cham
-    lon: 105.4645, // Approximate longitude for Kampong Cham
+    name: "KompongThom Province",
+    image: `/src/assets/KompongThom-Province.jpg`,
+    lat: 11.6155, // Approximate latitude for Kampong Speu
+    lon: 104.5209, // Approximate longitude for Kampong Speu
   },
 ];
 
@@ -93,7 +93,7 @@ function getWeatherIcon(weatherMain) {
 
 // Function to fetch weather data for a province
 async function fetchWeatherData(lat, lon) {
-  const apiKey = "b93932bbe1df60eb75e5596059faf22e"; // Replace with your OpenWeatherMap API key
+  const apiKey = "b93932bbe1df60eb75e5596059faf22e";
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
 
   try {
@@ -104,13 +104,13 @@ async function fetchWeatherData(lat, lon) {
     const data = await response.json();
     return {
       weatherIcon: getWeatherIcon(data.weather[0].main),
-      temperature: Math.round(data.main.temp),
+      temperature: Math.round(data.main.temp), // Temperature in Celsius, rounded
     };
   } catch (error) {
     console.error(`Error fetching weather for lat=${lat}, lon=${lon}:`, error);
     return {
-      weatherIcon: "🌥️",
-      temperature: "N/A",
+      weatherIcon: "🌥️", // Fallback icon
+      temperature: -999, // Fallback temperature as a number
     };
   }
 }
@@ -142,7 +142,7 @@ function createProvinceCard(province) {
   const tempP = document.createElement("p");
   tempP.className = "text-xs text-gray-600 mt-1";
   tempP.textContent =
-    province.temperature !== undefined ? `${province.temperature}°C` : "N/A";
+    province.temperature === -999 ? "N/A" : `${province.temperature}°C`;
 
   card.appendChild(imageDiv);
   card.appendChild(weatherIconDiv);
@@ -152,13 +152,16 @@ function createProvinceCard(province) {
 }
 
 // Function to create the entire Cambodia Forecast section content
-async function createCambodiaForecastSection() {
+async function renderCambodiaForecastSection() {
   // Get the section element
   const section = document.getElementById("cambodia-forecast");
   if (!section) {
     console.error("Section with id 'cambodia-forecast' not found.");
     return;
   }
+
+  // Clear the section content before re-rendering
+  section.innerHTML = "";
 
   // Fetch weather data for all provinces
   for (let province of provinces) {
@@ -190,12 +193,18 @@ async function createCambodiaForecastSection() {
   // Create the first row flex container
   const firstRow = document.createElement("div");
   firstRow.id = "first-row";
-  firstRow.className = "flex flex-row justify-center gap-4 mb-4 flex-wrap";
+  firstRow.className =
+    "flex flex-row md:flex-nowrap flex-wrap justify-between gap-4 mb-4 max-w-5xl mx-auto";
 
   // Populate the first row with province cards
   firstRowProvinces.forEach((province) => {
     const card = createProvinceCard(province);
-    card.classList.add("w-1/5", "min-w-[120px]"); // Smaller cards with minimum width
+    card.classList.add(
+      "w-1/5",
+      "min-w-[120px]",
+      "flex-grow-0",
+      "flex-shrink-0"
+    );
     firstRow.appendChild(card);
   });
 
@@ -205,12 +214,18 @@ async function createCambodiaForecastSection() {
   // Create the second row flex container
   const secondRow = document.createElement("div");
   secondRow.id = "second-row";
-  secondRow.className = "flex flex-row justify-center gap-4 flex-wrap";
+  secondRow.className =
+    "flex flex-row md:flex-nowrap flex-wrap justify-between gap-4 max-w-5xl mx-auto";
 
   // Populate the second row with province cards
   secondRowProvinces.forEach((province) => {
     const card = createProvinceCard(province);
-    card.classList.add("w-1/5", "min-w-[120px]"); // Smaller cards with minimum width
+    card.classList.add(
+      "w-1/5",
+      "min-w-[120px]",
+      "flex-grow-0",
+      "flex-shrink-0"
+    );
     secondRow.appendChild(card);
   });
 
@@ -218,5 +233,16 @@ async function createCambodiaForecastSection() {
   section.appendChild(secondRow);
 }
 
-// Call the function to create the section content when the script loads
-createCambodiaForecastSection();
+// Function to periodically update the weather data
+function startWeatherUpdates() {
+  // Initial render
+  renderCambodiaForecastSection();
+
+  // Refresh every 5 minutes (300,000 milliseconds)
+  setInterval(() => {
+    renderCambodiaForecastSection();
+  }, 300000);
+}
+
+// Call the function to start the weather updates when the script loads
+startWeatherUpdates();
