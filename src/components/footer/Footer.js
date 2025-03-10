@@ -25,8 +25,7 @@ function createFooter() {
 
   // Container div
   const container = document.createElement("div");
-  container.className =
-    "container px-4 flex items-center justify-center flex-col my-2";
+  container.className = " px-4 flex items-center justify-center flex-col my-2";
 
   // Title
   const title = document.createElement("h2");

@@ -11,7 +11,7 @@
     <main>
       <!-- Navbar -->
       <header
-        class="fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out text-white"
+        class="bg-transparent fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out text-white"
         id="navbar"
       >
         <nav class="py-4">
@@ -222,35 +222,31 @@
             <!-- Weather Card (Right Side) -->
             <div
               class="bg-transparent text-white rounded-xl p-6 sm:p-8 shadow-xl w-full max-w-lg"
-              id="weather-card"
             >
-              <div id="loading" class="hidden">Loading weather...</div>
-              <div id="weather-content" class="hidden">
+              <!-- Weather Content (no loading state since it's static) -->
+              <div>
                 <!-- Location and Weather Icon -->
                 <div class="flex justify-between items-center mb-6">
                   <div>
                     <h2 class="font-bold text-2xl sm:text-3xl">Phnom Penh</h2>
-                    <p class="text-gray-300 text-base sm:text-lg" id="date"></p>
+                    <p class="text-gray-300 text-base sm:text-lg">
+                      Today, 10 Mar
+                    </p>
                   </div>
-                  <div class="text-5xl sm:text-6xl" id="weather-icon"></div>
+                  <div class="text-5xl sm:text-6xl">☁️</div>
                 </div>
 
                 <!-- Temperature and Weather Condition -->
                 <div class="my-6 sm:my-8 text-center">
                   <div class="flex items-center justify-center">
-                    <span
-                      class="text-7xl sm:text-8xl font-bold"
-                      id="temperature"
-                    ></span>
+                    <span class="text-7xl sm:text-8xl font-bold">31°</span>
                   </div>
-                  <p
-                    class="text-xl sm:text-2xl capitalize mt-4"
-                    id="description"
-                  ></p>
-                  <p
-                    class="text-gray-300 mt-2 text-base sm:text-lg"
-                    id="feels-like"
-                  ></p>
+                  <p class="text-xl sm:text-2xl capitalize mt-4">
+                    scattered clouds
+                  </p>
+                  <p class="text-gray-300 mt-2 text-base sm:text-lg">
+                    Feels like 34°
+                  </p>
                 </div>
 
                 <!-- Weather Details (High and Low Temperature) -->
@@ -273,7 +269,7 @@
                       </svg>
                       <div>
                         <p class="text-gray-400 text-sm sm:text-base">High</p>
-                        <p class="text-lg sm:text-xl" id="temp-max"></p>
+                        <p class="text-lg sm:text-xl">33°</p>
                       </div>
                     </div>
                     <div class="flex items-center">
@@ -293,7 +289,7 @@
                       </svg>
                       <div>
                         <p class="text-gray-400 text-sm sm:text-base">Low</p>
-                        <p class="text-lg sm:text-xl" id="temp-min"></p>
+                        <p class="text-lg sm:text-xl">29°</p>
                       </div>
                     </div>
                   </div>
@@ -321,7 +317,7 @@
                         <p class="text-gray-400 text-sm sm:text-base">
                           Sunrise
                         </p>
-                        <p class="text-lg sm:text-xl" id="sunrise"></p>
+                        <p class="text-lg sm:text-xl">6:00 AM</p>
                       </div>
                     </div>
                     <div class="flex items-center">
@@ -342,12 +338,13 @@
                       </svg>
                       <div>
                         <p class="text-gray-400 text-sm sm:text-base">Sunset</p>
-                        <p class="text-lg sm:text-xl" id="sunset"></p>
+                        <p class="text-lg sm:text-xl">6:00 PM</p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+              <!-- Error div (hidden by default, can be shown manually if needed) -->
               <div id="error" class="hidden">Failed to load weather data</div>
             </div>
           </div>
@@ -570,9 +567,9 @@
     </main>
 
     <script src="./src/components/header/Header.js"></script>
-    <script src="./src/components/hero-home/Hero.js"></script>
+    <!-- <script src="./src/components/hero-home/Hero.js"></script> -->
     <script src="./src/components/Cambodia-Forecast/Cambodia-Forecast.js"></script>
-    <!-- <script src="/src/components/WeatherOverview/weather.js"></script> -->
+    <script src="/src/components/WeatherOverview/weather.js"></script>
     <script src="./src//components/footer/Footer.js"></script>
   </body>
 </html>
