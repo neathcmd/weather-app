@@ -43,9 +43,9 @@ const provinces = [
   {
     name: "PreahVihear Province",
     image: "/src/assets/PreyVeng-Province.jpg",
-    lat: 12.5388,
-    lon: 103.9192,
-    weatherIcon: "🌧️",
+    lat: 13.8, // Adding default coordinates
+    lon: 105.05,
+    weatherIcon: "☀️",
     temperature: 29,
   },
   {
@@ -86,10 +86,11 @@ const provinces = [
 function createProvinceCard(province) {
   const card = document.createElement("div");
   card.className =
-    "bg-[#DBD0D0] rounded-xl p-4 flex flex-col items-center shadow-md hover:shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 cursor-pointer min-w-[120px] w-full";
+    "bg-[#DBD0D0] rounded-xl p-3 sm:p-4 flex flex-col items-center shadow-md hover:shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 cursor-pointer w-full";
 
   const imageContainer = document.createElement("div");
-  imageContainer.className = "w-12 h-12 flex items-center justify-center mb-3";
+  imageContainer.className =
+    "w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center mb-2 sm:mb-3";
   const img = document.createElement("img");
   img.src = province.image;
   img.alt = `${province.name} image`;
@@ -97,17 +98,17 @@ function createProvinceCard(province) {
   imageContainer.appendChild(img);
 
   const weatherIcon = document.createElement("div");
-  weatherIcon.className = "text-2xl mb-2";
+  weatherIcon.className = "text-xl sm:text-2xl mb-1 sm:mb-2";
   weatherIcon.textContent = province.weatherIcon || "🌥️";
 
   const name = document.createElement("p");
   name.className =
-    "text-sm font-medium text-gray-800 text-center leading-tight";
+    "text-xs sm:text-sm font-medium text-gray-800 text-center leading-tight";
   name.textContent = province.name;
 
   const temp = document.createElement("p");
   temp.className = "text-xs text-gray-600 mt-1";
-  temp.textContent = `${province.temperature}°C`;
+  temp.textContent = province.temperature ? `${province.temperature}°C` : "N/A";
 
   card.appendChild(imageContainer);
   card.appendChild(weatherIcon);
@@ -117,18 +118,19 @@ function createProvinceCard(province) {
   return card;
 }
 
-// Function to render a row of province cards
-function renderProvinceRow(provinces, rowId) {
-  const row = document.createElement("div");
-  row.id = rowId;
-  row.className = "flex flex-wrap justify-center gap-6 max-w-5xl mx-auto mb-6";
+// Function to render a row of province cards with responsive grid
+function renderProvinceGrid(provinces) {
+  const container = document.createElement("div");
+  container.className =
+    "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 xs:gap-3 sm:gap-4 md:gap-5 lg:gap-6 " +
+    "max-w-7xl mx-auto px-2 sm:px-4 lg:px-6";
 
   provinces.forEach((province) => {
     const card = createProvinceCard(province);
-    row.appendChild(card);
+    container.appendChild(card);
   });
 
-  return row;
+  return container;
 }
 
 // Main function to render the Cambodia Forecast section
@@ -139,32 +141,52 @@ function renderCambodiaForecastSection() {
     return;
   }
 
+  // Clear previous content
   section.innerHTML = "";
-  section.className = "py-12 px-4 sm:px-6 lg:px-8 bg-gray-50";
+  section.className =
+    "py-6 sm:py-8 md:py-10 lg:py-12 px-3 sm:px-4 md:px-6 lg:px-8 bg-gray-50";
 
   // Header
   const header = document.createElement("div");
-  header.className = "text-center mb-10";
+  header.className = "text-center mb-6 sm:mb-8 md:mb-10";
+
   const heading = document.createElement("h2");
-  heading.className = "text-3xl font-bold text-gray-900 mb-3";
+  heading.className =
+    "text-2xl sm:text-3xl font-bold text-gray-900 mb-2 sm:mb-3";
   heading.textContent = "Cambodia Forecast";
+
   const description = document.createElement("p");
   description.className =
-    "text-gray-600 text-sm max-w-2xl mx-auto leading-relaxed";
+    "text-xs sm:text-sm text-gray-600 max-w-2xl mx-auto leading-relaxed px-2";
   description.textContent =
     "Stay updated with the latest weather forecasts across Cambodia. Plan your activities with accurate and timely weather information.";
+
   header.appendChild(heading);
   header.appendChild(description);
   section.appendChild(header);
 
-  // Province rows
-  const firstRowProvinces = provinces.slice(0, 5);
-  const secondRowProvinces = provinces.slice(5);
-  const firstRow = renderProvinceRow(firstRowProvinces, "first-row");
-  const secondRow = renderProvinceRow(secondRowProvinces, "second-row");
-  section.appendChild(firstRow);
-  section.appendChild(secondRow);
+  // Use responsive grid instead of rows
+  const grid = renderProvinceGrid(provinces);
+  section.appendChild(grid);
+
+  // Add resize listener to handle layout adjustments
+  window.addEventListener("resize", function () {
+    // Optional: add any specific resize handling logic here if needed
+  });
 }
 
 // Initialize the forecast section on page load
 document.addEventListener("DOMContentLoaded", renderCambodiaForecastSection);
+
+// Add a small utility function to ensure images load properly
+function preloadProvinceImages() {
+  provinces.forEach((province) => {
+    if (province.image) {
+      const img = new Image();
+      img.src = province.image;
+    }
+  });
+}
+
+// Call preload function after DOM is loaded
+document.addEventListener("DOMContentLoaded", preloadProvinceImages);
