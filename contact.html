@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./src//styles/output.css" />
+  </head>
+  <body>
+    <main>
+      <!-- Navbar -->
+      <header
+        class="bg-transparent fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out text-white"
+        id="navbar"
+      >
+        <nav class="py-4">
+          <div
+            class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center"
+          >
+            <!-- Logo and Brand Name -->
+            <div class="gap-4 flex items-center">
+              <span class="text-orange-500">⚡</span>
+              <a
+                href="/"
+                class="font-bold text-lg tracking-wide hover:text-black transition-colors duration-300 ease-in-out"
+              >
+                Weather Cambodia
+              </a>
+            </div>
+
+            <!-- Desktop Navigation Links -->
+            <div class="hidden md:flex space-x-6 lg:space-x-8">
+              <a
+                href="index.html"
+                class="relative text-sm lg:text-base font-medium transition-colors duration-300 ease-in-out after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-black after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full"
+              >
+                Home
+              </a>
+              <a
+                href="about.html"
+                class="relative text-sm lg:text-base font-medium transition-colors duration-300 ease-in-out after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-black after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full"
+              >
+                About Us
+              </a>
+              <a
+                href="Gallery.html"
+                class="relative text-sm lg:text-base font-medium transition-colors duration-300 ease-in-out after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-black after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full"
+              >
+                Gallery
+              </a>
+              <a
+                href="blog.html"
+                class="relative text-sm lg:text-base font-medium transition-colors duration-300 ease-in-out after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-black after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full"
+              >
+                Blog
+              </a>
+              <a
+                href="faq.html"
+                class="relative text-sm lg:text-base font-medium transition-colors duration-300 ease-in-out after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-black after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full"
+              >
+                FAQ
+              </a>
+              <a
+                href="contact.html"
+                class="relative text-sm lg:text-base font-medium transition-colors duration-300 ease-in-out after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-black after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full"
+              >
+                Contact
+              </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button
+              class="md:hidden text-white focus:outline-none transition-transform duration-300 ease-in-out hover:scale-110"
+              id="mobile-menu-btn"
+              aria-label="Open menu"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class="menu-icon"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
+              </svg>
+            </button>
+
+            <!-- Get Info Button (Desktop) -->
+            <a
+              href="contact.html"
+              class="hidden md:inline-block px-4 py-2 rounded-2xl font-medium shadow-md transform transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-[#db9c27] focus:ring-offset-1 bg-[#db9c27] text-white hover:bg-white hover:text-[#db9c27] hover:shadow-lg"
+              id="get-info-btn"
+            >
+              Get Info
+            </a>
+          </div>
+
+          <!-- Mobile Navigation Links -->
+          <div
+            class="fixed top-0 right-0 h-full w-64 bg-[#EE7C27] backdrop-blur-md transform transition-all duration-500 ease-in-out z-50 translate-x-full opacity-0"
+            id="mobile-menu"
+          >
+            <!-- Close Button -->
+            <button
+              class="absolute top-4 right-4 text-white focus:outline-none transition-transform duration-300 ease-in-out hover:scale-110"
+              id="close-menu-btn"
+              aria-label="Close menu"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+
+            <!-- Menu Content -->
+            <div class="mt-16 p-6 flex flex-col space-y-4">
+              <a
+                href="index.html"
+                class="block px-4 py-3 text-lg font-medium transition-all duration-300 ease-in-out transform hover:translate-x-2 hover:text-[#EE7C27]"
+              >
+                Home
+              </a>
+              <a
+                href="about.html"
+                class="block px-4 py-3 text-lg font-medium transition-all duration-300 ease-in-out transform hover:translate-x-2 hover:text-[#EE7C27]"
+              >
+                About Us
+              </a>
+              <a
+                href="Gallery.html"
+                class="block px-4 py-3 text-lg font-medium transition-all duration-300 ease-in-out transform hover:translate-x-2 hover:text-[#EE7C27]"
+              >
+                Gallery
+              </a>
+              <a
+                href="blog.html"
+                class="block px-4 py-3 text-lg font-medium transition-all duration-300 ease-in-out transform hover:translate-x-2 hover:text-[#EE7C27]"
+              >
+                Blog
+              </a>
+              <a
+                href="faq.html"
+                class="block px-4 py-3 text-lg font-medium transition-all duration-300 ease-in-out transform hover:translate-x-2 hover:text-[#EE7C27]"
+              >
+                FAQ
+              </a>
+              <a
+                href="contact.html"
+                class="block px-4 py-3 text-lg font-medium transition-all duration-300 ease-in-out transform hover:translate-x-2 hover:text-[#EE7C27]"
+              >
+                Contact
+              </a>
+              <a
+                href="contact.html"
+                class="block px-4 py-3 bg-white text-[#EE7C27] border border-transparent hover:border-white hover:text-white hover:bg-[#EE7C27] transition-all duration-300 ease-in-out transform hover:scale-105 rounded-2xl font-medium shadow-md hover:shadow-lg"
+              >
+                Get Info
+              </a>
+            </div>
+          </div>
+
+          <!-- Overlay for Mobile Menu -->
+          <div
+            class="fixed top-0 left-0 w-full h-full bg-black/70 backdrop-blur-sm z-40 transition-opacity duration-500 ease-in-out hidden"
+            id="mobile-overlay"
+          ></div>
+        </nav>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="w-full h-screen relative overflow-hidden">
+        <video
+          class="absolute top-0 left-0 w-full h-full object-cover"
+          src="/src/videos/3842236-hd_1920_1080_24fps.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
+
+        <!-- overlay -->
+        <div
+          class="relative z-10 h-full w-full bg-gradient-to-t from-black/60 to-transparent flex items-center justify-start"
+        >
+          <div
+            class="bg-black/90 p-8 sm:p-10 md:p-12 lg:p-16 rounded-2xl shadow-xl max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-3xl w-full text-start backdrop-blur-sm border border-white"
+          >
+            <h1
+              class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-8 sm:mb-10 drop-shadow-lg"
+            >
+              Contact Us
+            </h1>
+            <p
+              class="text-base sm:text-lg md:text-xl lg:text-2xl text-white leading-relaxed mb-8 sm:mb-10"
+            >
+              "Feel free to contact us for more information at any time. Our
+              dedicated team is here to answer your questions and provide the
+              assistance you need. We value your inquiries and are committed to
+              responding promptly with helpful information. We look forward to
+              connecting with you!"
+            </p>
+            <button
+              class="bg-orange-500 text-white font-bold py-3 px-6 rounded-full hover:bg-orange-600 transition-colors cursor-pointer"
+            >
+              CONTACT US
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
