@@ -1,129 +1,90 @@
-# Hello
+# Weather App Project
 
-\ <div
-              class="bg-transparent text-white rounded-xl p-6 sm:p-8 shadow-xl w-full max-w-lg"
-            >
-<!-- Weather Content (no loading state since it's static) -->
-<div>
-<!-- Location and Weather Icon -->
-<div class="flex justify-between items-center mb-6">
-<div>
-<h2 class="font-bold text-2xl sm:text-3xl">Phnom Penh</h2>
-<p class="text-gray-300 text-base sm:text-lg">
-Today, 10 Mar
-</p>
-</div>
-<div class="text-5xl sm:text-6xl">☁️</div>
-</div>
+## Overview
 
-                <!-- Temperature and Weather Condition -->
-                <div class="my-6 sm:my-8 text-center">
-                  <div class="flex items-center justify-center">
-                    <span class="text-7xl sm:text-8xl font-bold">31°</span>
-                  </div>
-                  <p class="text-xl sm:text-2xl capitalize mt-4">
-                    scattered clouds
-                  </p>
-                  <p class="text-gray-300 mt-2 text-base sm:text-lg">
-                    Feels like 34°
-                  </p>
-                </div>
+This Weather App is a simple and user-friendly application that provides real-time weather updates for any location worldwide. It was developed by a team of three developers as a collaborative project to enhance our skills in web development, API integration, and UI/UX design.
 
-                <!-- Weather Details (High and Low Temperature) -->
-                <div class="border-t border-gray-700 pt-6">
-                  <div class="grid grid-cols-2 gap-6">
-                    <div class="flex items-center">
-                      <svg
-                        class="h-6 w-6 sm:h-7 sm:w-7 mr-3 text-orange-400"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
-                        />
-                      </svg>
-                      <div>
-                        <p class="text-gray-400 text-sm sm:text-base">High</p>
-                        <p class="text-lg sm:text-xl">33°</p>
-                      </div>
-                    </div>
-                    <div class="flex items-center">
-                      <svg
-                        class="h-6 w-6 sm:h-7 sm:w-7 mr-3 text-blue-400"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"
-                        />
-                      </svg>
-                      <div>
-                        <p class="text-gray-400 text-sm sm:text-base">Low</p>
-                        <p class="text-lg sm:text-xl">29°</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+## Features
 
-                <!-- Sunrise and Sunset -->
-                <div class="mt-6 pt-6 border-t border-gray-700">
-                  <div class="grid grid-cols-2 gap-6">
-                    <div class="flex items-center">
-                      <svg
-                        class="h-6 w-6 sm:h-7 sm:w-7 mr-3 text-blue-400"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-                        />
-                      </svg>
-                      <div>
-                        <p class="text-gray-400 text-sm sm:text-base">
-                          Sunrise
-                        </p>
-                        <p class="text-lg sm:text-xl">6:00 AM</p>
-                      </div>
-                    </div>
-                    <div class="flex items-center">
-                      <svg
-                        class="h-6 w-6 sm:h-7 sm:w-7 mr-3 text-orange-400"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"
-                        />
-                        <circle cx="12" cy="7" r="4" />
-                      </svg>
-                      <div>
-                        <p class="text-gray-400 text-sm sm:text-base">Sunset</p>
-                        <p class="text-lg sm:text-xl">6:00 PM</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Error div (hidden by default, can be shown manually if needed) -->
-              <div id="error" class="hidden">Failed to load weather data</div>
-            </div>
+- **Current Weather Data**: Displays temperature, humidity, wind speed, and weather conditions.
+- **Search Functionality**: Users can search for weather details of any city or location.
+- **Responsive Design**: Works seamlessly on both desktop and mobile devices.
+- **Error Handling**: Provides appropriate messages when an invalid location is entered.
+
+## Technologies Used
+
+- **Frontend**: HTML, CSS, JavaScript
+- **API**: OpenWeatherMap API (for fetching real-time weather data)
+- **Frameworks/Libraries**: Axios (for API requests), Tailwind (for styling)
+- **Version Control**: Git & GitHub
+
+## Project structure
+
+```bash
+WEATHER-APP
+│-- .vscode/
+│-- node_modules/
+│-- src/
+│   │-- assets/
+│   │-- components/
+│   │   │-- Cambodia-Forecast/
+│   │   │   │-- Cambodia-Forecast.js
+│   │   │-- footer/
+│   │   │   │-- Footer.js
+│   │   │-- header/
+│   │   │   │-- Header.js
+│   │   │-- WeatherOverview.js
+│   │-- scripts/
+│   │-- styles/
+│   │   │-- font.css
+│   │   │-- input.css
+│   │   │-- output.css
+│-- videos/
+│-- blog.html
+│-- contact.html
+│-- faq.html
+│-- Gallery.html
+│-- index.html
+│-- package-lock.json
+│-- package.json
+│-- README.md
+```
+
+## How to Run the Project
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-repository/weather-app.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd weather-app
+   ```
+   Setup tailwindcss
+   run:
+   ```bash
+   npm install tailwindcss @tailwindcss/cil
+   ```
+   Then run:
+   ```bash
+   npx @tailwindcss/cli -i ./src/styles/input.css -o ./src/styles/output.css --watch
+   ```
+3. Open the `index.html` file in a browser, or use a local server for a better experience.
+
+## Team Members
+
+- **[Phong Visal]** – Frontend & UI Design
+- **[Sal Monineath]** – API Integration & Data Handling
+- **[BunThen]** – Responsive Design & Error Handling
+
+## Future Improvements
+
+- Implement user location detection for automatic weather updates.
+- Introduce dark mode for better user experience.
+- Improve search Functionality
+
+## License
+
+This project is open-source and available under the MIT License.
+
+---
