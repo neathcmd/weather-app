@@ -149,5 +149,3 @@ document.head.appendChild(style);
 
 // Call function on window load
 window.onload = updateWeather;
-
-

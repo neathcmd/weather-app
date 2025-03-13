@@ -1,4 +1,3 @@
-// Get DOM elements
 const navbar = document.getElementById("navbar");
 const mobileMenuBtn = document.getElementById("mobile-menu-btn");
 const mobileMenu = document.getElementById("mobile-menu");

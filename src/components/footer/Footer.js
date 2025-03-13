@@ -56,8 +56,8 @@ function createFooter() {
 
   // Footer bottom
   const bottom = document.createElement("div");
-  bottom.className = "mt-8 text-gray-500 border-t-2 border-gray-800 pt-4";
-  bottom.textContent = "© 2025 - All Rights Reserved | Created By Phoungvisal";
+  bottom.className = "mt-8 text-gray-500 border-t-2 border-white pt-4 w-full";
+  bottom.textContent = "© 2025 - All Rights Reserved | Created By Phoung Visal";
 
   // Interactivity: Toggle visibility of navigation on title click
   title.addEventListener("click", () => {
