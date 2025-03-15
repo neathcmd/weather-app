@@ -199,160 +199,214 @@
       <!-- Hero Section -->
       <section class="w-full h-screen relative bg-cover bg-center bg-no-repeat">
         <video
+          class="absolute top-0 left-0 w-full h-full object-cover"
           src="src/videos/17039829-hd_1920_1080_24fps.mp4"
           autoplay
           muted
           loop
-          class="absolute inset-0 w-full h-full object-cover"
-        >
+          playsinline
+        ></video>
+
+        <!-- overlay -->
+
         <div
-          class="flex flex-col md:flex-row items-center justify-around px-[5%] py-12 w-full h-screen"
+          class="relative z-10 h-full w-full bg-gradient-to-t from-black/60 to-transparent flex items-center justify-center px-4 sm:px-6"
         >
-          <!-- Hero Content (Left Side) -->
           <div
-            class="max-w-full md:max-w-[50%] text-white text-center mb-8 md:mb-0"
+            class="bg-black/50 p-4 sm:p-6 rounded-2xl shadow-lg backdrop-blur-md border border-white text-center max-w-2xl mx-4"
           >
-            <h1
-              class="text-4xl md:text-5xl font-bold leading-tight mb-8 drop-shadow-lg"
+            <div
+              class="flex flex-col items-center text-white space-y-4 sm:space-y-5"
             >
-              Weather Blog
-            </h1>
-            <p class="text-lg tracking-wider opacity-80">
-              The latest news and articles relating to all things weather. From
-              the best times to visit countries and climate data to travel
-              advice and reccomendations.
-            </p>
+              <h1
+                class="text-2xl sm:text-4xl md:text-5xl font-bold leading-tight drop-shadow-md"
+              >
+                Weather Blog
+              </h1>
+              <p
+                class="text-sm sm:text-base md:text-lg leading-relaxed opacity-80 text-center"
+              >
+                The latest news and articles relating to all things weather.
+                From the best times to visit countries and climate data to
+                travel advice and reccomendations.
+              </p>
+              <a href="#get">
+                <button
+                  class="bg-orange-500 text-white font-bold py-2 px-4 sm:py-2 sm:px-6 rounded-full hover:bg-orange-600 transition-colors cursor-pointer text-base sm:text-lg"
+                >
+                  Explore
+                </button>
+              </a>
+            </div>
           </div>
         </div>
-        <div
-          class="flex flex-wrap justify-center items-center rounded-3xl mx-auto gap-8"
-        ></div>
       </section>
-      
-      <div class="blog-page">
-        <div class="flex flex-wrap px-20 justify-between mt-30">
-          <div>
-            <div class="bg-white p-3 rounded-lg shadow-md">
-              <img
-                src="https://cms.code4rest.com/wp128/wp-content/uploads/2024/11/blog-img-06-1536x560.jpg"
-                alt="Stormy sky"
-                class="rounded-lg w-full h-48 object-cover cursor-pointer transition duration-500 hover:scale-110"
-              />
-              <h2 class="text-lg font-semibold mt-3">
+
+      <section id="get" class="pt-[6rem] pb-[2rem]">
+        <!-- head -->
+        <div class="w-full flex justify-center my-6">
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Blogs</h2>
+        </div>
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+            <!-- Blog Card 1 -->
+            <div
+              class="bg-white p-4 rounded-lg shadow-md transition duration-300 hover:shadow-lg"
+            >
+              <div class="overflow-hidden rounded-lg">
+                <img
+                  src="https://cms.code4rest.com/wp128/wp-content/uploads/2024/11/blog-img-06-1536x560.jpg"
+                  alt="Stormy sky"
+                  class="w-full h-48 object-cover cursor-pointer transition duration-500 hover:scale-110"
+                />
+              </div>
+              <h2 class="text-lg font-semibold mt-4">
                 Rainy Days Bring Out The Best Puddles
               </h2>
-              <p class="text-sm text-gray-600">November 28, 2024</p>
+              <p class="text-sm text-gray-600 mt-1">November 28, 2024</p>
               <p class="text-gray-700 text-sm mt-2">
                 For many, the aesthetic, acoustics & feel that the rain brings
                 create a sense of cinematic charm.
               </p>
-              <a href="#" class="text-blue-500 font-semibold mt-2 inline-block"
+              <a
+                href="#"
+                class="text-blue-500 font-semibold mt-3 inline-block hover:text-blue-700"
                 >READ MORE</a
               >
             </div>
-          </div>
-          <div>
-            <div class="bg-white p-4 rounded-lg shadow-md">
-              <img
-                src="https://cms.code4rest.com/wp128/wp-content/uploads/2024/11/blog-img-05-768x280.jpg"
-                alt="Stormy sky"
-                class="rounded-lg w-full h-48 object-cover cursor-pointer transition duration-500 hover:scale-110"
-              />
-              <h2 class="text-lg font-semibold mt-3">
+
+            <!-- Blog Card 2 -->
+            <div
+              class="bg-white p-4 rounded-lg shadow-md transition duration-300 hover:shadow-lg"
+            >
+              <div class="overflow-hidden rounded-lg">
+                <img
+                  src="https://cms.code4rest.com/wp128/wp-content/uploads/2024/11/blog-img-05-768x280.jpg"
+                  alt="Stormy sky"
+                  class="w-full h-48 object-cover cursor-pointer transition duration-500 hover:scale-110"
+                />
+              </div>
+              <h2 class="text-lg font-semibold mt-4">
                 Rainy Days Bring Out The Best Puddles
               </h2>
-              <p class="text-sm text-gray-600">November 28, 2024</p>
+              <p class="text-sm text-gray-600 mt-1">November 28, 2024</p>
               <p class="text-gray-700 text-sm mt-2">
                 For many, the aesthetic, acoustics & feel that the rain brings
                 create a sense of cinematic charm.
               </p>
-              <a href="#" class="text-blue-500 font-semibold mt-2 inline-block"
+              <a
+                href="#"
+                class="text-blue-500 font-semibold mt-3 inline-block hover:text-blue-700"
                 >READ MORE</a
               >
             </div>
-          </div>
-          <div>
-            <div class="bg-white p-4 rounded-lg shadow-md">
-              <img
-                src="https://cms.code4rest.com/wp128/wp-content/uploads/2024/11/blog-img-03-768x280.jpg"
-                alt="Stormy sky"
-                class="rounded-lg w-full h-48 object-cover cursor-pointer transition duration-500 hover:scale-110"
-              />
-              <h2 class="text-lg font-semibold mt-3">
+
+            <!-- Blog Card 3 -->
+            <div
+              class="bg-white p-4 rounded-lg shadow-md transition duration-300 hover:shadow-lg"
+            >
+              <div class="overflow-hidden rounded-lg">
+                <img
+                  src="https://cms.code4rest.com/wp128/wp-content/uploads/2024/11/blog-img-03-768x280.jpg"
+                  alt="Stormy sky"
+                  class="w-full h-48 object-cover cursor-pointer transition duration-500 hover:scale-110"
+                />
+              </div>
+              <h2 class="text-lg font-semibold mt-4">
                 Rainy Days Bring Out The Best Puddles
               </h2>
-              <p class="text-sm text-gray-600">November 28, 2024</p>
+              <p class="text-sm text-gray-600 mt-1">November 28, 2024</p>
               <p class="text-gray-700 text-sm mt-2">
                 For many, the aesthetic, acoustics & feel that the rain brings
                 create a sense of cinematic charm.
               </p>
-              <a href="#" class="text-blue-500 font-semibold mt-2 inline-block"
+              <a
+                href="#"
+                class="text-blue-500 font-semibold mt-3 inline-block hover:text-blue-700"
                 >READ MORE</a
               >
             </div>
-          </div>
-          <div>
-            <div class="bg-white p-4 rounded-lg shadow-md">
-              <img
-                src="https://cms.code4rest.com/wp128/wp-content/uploads/2024/11/blog-img-04-768x280.jpg"
-                alt="Stormy sky"
-                class="rounded-lg w-full h-48 object-cover cursor-pointer transition duration-500 hover:scale-110"
-              />
-              <h2 class="text-lg font-semibold mt-3">
+
+            <!-- Blog Card 4 -->
+            <div
+              class="bg-white p-4 rounded-lg shadow-md transition duration-300 hover:shadow-lg"
+            >
+              <div class="overflow-hidden rounded-lg">
+                <img
+                  src="https://cms.code4rest.com/wp128/wp-content/uploads/2024/11/blog-img-04-768x280.jpg"
+                  alt="Stormy sky"
+                  class="w-full h-48 object-cover cursor-pointer transition duration-500 hover:scale-110"
+                />
+              </div>
+              <h2 class="text-lg font-semibold mt-4">
                 Rainy Days Bring Out The Best Puddles
               </h2>
-              <p class="text-sm text-gray-600">November 28, 2024</p>
+              <p class="text-sm text-gray-600 mt-1">November 28, 2024</p>
               <p class="text-gray-700 text-sm mt-2">
                 For many, the aesthetic, acoustics & feel that the rain brings
                 create a sense of cinematic charm.
               </p>
-              <a href="#" class="text-blue-500 font-semibold mt-2 inline-block"
+              <a
+                href="#"
+                class="text-blue-500 font-semibold mt-3 inline-block hover:text-blue-700"
                 >READ MORE</a
               >
             </div>
-          </div>
-          <div>
-            <div class="bg-white p-4 rounded-lg shadow-md">
-              <img
-                src="https://cms.code4rest.com/wp128/wp-content/uploads/2024/11/blog-img-02-768x280.jpg"
-                alt="Stormy sky"
-                class="rounded-lg w-full h-48 object-cover cursor-pointer transition duration-500 hover:scale-110"
-              />
-              <h2 class="text-lg font-semibold mt-3">
+
+            <!-- Blog Card 5 -->
+            <div
+              class="bg-white p-4 rounded-lg shadow-md transition duration-300 hover:shadow-lg"
+            >
+              <div class="overflow-hidden rounded-lg">
+                <img
+                  src="https://cms.code4rest.com/wp128/wp-content/uploads/2024/11/blog-img-02-768x280.jpg"
+                  alt="Stormy sky"
+                  class="w-full h-48 object-cover cursor-pointer transition duration-500 hover:scale-110"
+                />
+              </div>
+              <h2 class="text-lg font-semibold mt-4">
                 Rainy Days Bring Out The Best Puddles
               </h2>
-              <p class="text-sm text-gray-600">November 28, 2024</p>
+              <p class="text-sm text-gray-600 mt-1">November 28, 2024</p>
               <p class="text-gray-700 text-sm mt-2">
                 For many, the aesthetic, acoustics & feel that the rain brings
                 create a sense of cinematic charm.
               </p>
-              <a href="#" class="text-blue-500 font-semibold mt-2 inline-block"
+              <a
+                href="#"
+                class="text-blue-500 font-semibold mt-3 inline-block hover:text-blue-700"
                 >READ MORE</a
               >
             </div>
-          </div>
-          <div>
-            <div class="bg-white p-4 rounded-lg shadow-md">
-              <img
-                src="https://cms.code4rest.com/wp128/wp-content/uploads/2024/11/blog-img-01-768x280.jpg"
-                alt="Stormy sky"
-                class="rounded-lg w-full h-48 object-cover cursor-pointer transition duration-500 hover:scale-110"
-              />
-              <h2 class="text-lg font-semibold mt-3">
+
+            <!-- Blog Card 6 -->
+            <div
+              class="bg-white p-4 rounded-lg shadow-md transition duration-300 hover:shadow-lg"
+            >
+              <div class="overflow-hidden rounded-lg">
+                <img
+                  src="https://cms.code4rest.com/wp128/wp-content/uploads/2024/11/blog-img-01-768x280.jpg"
+                  alt="Stormy sky"
+                  class="w-full h-48 object-cover cursor-pointer transition duration-500 hover:scale-110"
+                />
+              </div>
+              <h2 class="text-lg font-semibold mt-4">
                 Rainy Days Bring Out The Best Puddles
               </h2>
-              <p class="text-sm text-gray-600">November 28, 2024</p>
+              <p class="text-sm text-gray-600 mt-1">November 28, 2024</p>
               <p class="text-gray-700 text-sm mt-2">
                 For many, the aesthetic, acoustics & feel that the rain brings
                 create a sense of cinematic charm.
               </p>
-              <a href="#" class="text-blue-500 font-semibold mt-2 inline-block"
+              <a
+                href="#"
+                class="text-blue-500 font-semibold mt-3 inline-block hover:text-blue-700"
                 >READ MORE</a
               >
             </div>
           </div>
         </div>
-      </div>
+      </section>
       <!-- footer section -->
       <style>
         .list-none::marker {
