@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./src/styles/output.css" />
     <!-- font -->
     <link rel="stylesheet" href="/src/styles/font.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
   <body>
     <main>
@@ -144,25 +145,25 @@
               <div class="p-6 flex flex-col space-y-4">
                 <a
                   href="index.html"
-                  class="block px-4 py-3 text-lg transition-all relative lg:text-base font-medium transition-colors duration-300 ease-in-out after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-black after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full"
+                  class="block px-4 py-3 text-lg relative lg:text-base font-medium transition-colors duration-300 ease-in-out after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-black after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full"
                 >
                   Home
                 </a>
                 <a
                   href="about.html"
-                  class="block px-4 py-3 text-lg transition-all relative lg:text-base font-medium transition-colors duration-300 ease-in-out after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-black after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full"
+                  class="block px-4 py-3 text-lg relative lg:text-base font-medium transition-colors duration-300 ease-in-out after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-black after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full"
                 >
                   About Us
                 </a>
                 <a
                   href="Gallery.html"
-                  class="block px-4 py-3 text-lg transition-all relative lg:text-base font-medium transition-colors duration-300 ease-in-out after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-black after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full"
+                  class="block px-4 py-3 text-lg relative lg:text-base font-medium transition-colors duration-300 ease-in-out after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-black after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full"
                 >
                   Gallery
                 </a>
                 <a
                   href="blog.html"
-                  class="block px-4 py-3 text-lg transition-all relative lg:text-base font-medium transition-colors duration-300 ease-in-out after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-black after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full"
+                  class="block px-4 py-3 text-lg relative lg:text-base font-medium transition-colors duration-300 ease-in-out after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-black after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full"
                 >
                   Blog
                 </a>
@@ -216,15 +217,22 @@
             <div
               class="max-w-full md:max-w-[50%] text-white text-start mb-8 md:mb-0"
             >
-              <p class="text-lg mb-4 tracking-wider opacity-80">
+              <p
+                data-aos="fade-right"
+                class="text-lg mb-4 tracking-wider opacity-80"
+              >
                 ---Weather and forecast
               </p>
               <h1
+                data-aos="fade-right"
+                data-aos-delay="200"
                 class="text-4xl md:text-5xl font-bold leading-tight mb-8 drop-shadow-lg"
               >
                 WEATHER IS A GREAT METAPHOR FOR LIFE
               </h1>
               <button
+                data-aos="fade-right"
+                data-aos-delay="300"
                 class="bg-orange-500 text-white font-bold py-3 px-6 rounded-full hover:bg-orange-600 transition-colors cursor-pointer"
               >
                 MORE INFO
@@ -240,8 +248,17 @@
                 <!-- Location and Weather Icon -->
                 <div class="flex justify-between items-center mb-6">
                   <div>
-                    <h2 class="font-bold text-2xl sm:text-3xl">Phnom Penh</h2>
-                    <p class="text-gray-300 text-base sm:text-lg">
+                    <h2
+                      data-aos="fade-left"
+                      class="font-bold text-2xl sm:text-3xl"
+                    >
+                      Phnom Penh
+                    </h2>
+                    <p
+                      data-aos="fade-left"
+                      data-aos-delay="200"
+                      class="text-gray-300 text-base sm:text-lg"
+                    >
                       Today, 10 Mar
                     </p>
                   </div>
@@ -251,12 +268,24 @@
                 <!-- Temperature and Weather Condition -->
                 <div class="my-6 sm:my-8 text-center">
                   <div class="flex items-center justify-center">
-                    <span class="text-7xl sm:text-8xl font-bold">31°</span>
+                    <span
+                      data-aos="zoom-in-up"
+                      class="text-7xl sm:text-8xl font-bold"
+                      >31°</span
+                    >
                   </div>
-                  <p class="text-xl sm:text-2xl capitalize mt-4">
+                  <p
+                    data-aos="zoom-in-up"
+                    data-aos-delay="200"
+                    class="text-xl sm:text-2xl capitalize mt-4"
+                  >
                     scattered clouds
                   </p>
-                  <p class="text-gray-300 mt-2 text-base sm:text-lg">
+                  <p
+                    data-aos="zoom-in-up"
+                    data-aos-delay="300"
+                    class="text-gray-300 mt-2 text-base sm:text-lg"
+                  >
                     Feels like 34°
                   </p>
                 </div>
@@ -266,6 +295,7 @@
                   <div class="grid grid-cols-2 gap-6">
                     <div class="flex items-center">
                       <svg
+                        data-aos="fade-right"
                         class="h-6 w-6 sm:h-7 sm:w-7 mr-3 text-orange-400"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -280,12 +310,18 @@
                         />
                       </svg>
                       <div>
-                        <p class="text-gray-400 text-sm sm:text-base">High</p>
-                        <p class="text-lg sm:text-xl">33°</p>
+                        <p
+                          data-aos="fade-down"
+                          class="text-gray-400 text-sm sm:text-base"
+                        >
+                          High
+                        </p>
+                        <p data-aos="fade-up" class="text-lg sm:text-xl">33°</p>
                       </div>
                     </div>
                     <div class="flex items-center">
                       <svg
+                        data-aos="fade-right"
                         class="h-6 w-6 sm:h-7 sm:w-7 mr-3 text-blue-400"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -300,8 +336,13 @@
                         />
                       </svg>
                       <div>
-                        <p class="text-gray-400 text-sm sm:text-base">Low</p>
-                        <p class="text-lg sm:text-xl">29°</p>
+                        <p
+                          data-aos="fade-down"
+                          class="text-gray-400 text-sm sm:text-base"
+                        >
+                          Low
+                        </p>
+                        <p data-aos="fade-up" class="text-lg sm:text-xl">29°</p>
                       </div>
                     </div>
                   </div>
@@ -312,6 +353,7 @@
                   <div class="grid grid-cols-2 gap-6">
                     <div class="flex items-center">
                       <svg
+                        data-aos="fade-right"
                         class="h-6 w-6 sm:h-7 sm:w-7 mr-3 text-blue-400"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -326,14 +368,20 @@
                         />
                       </svg>
                       <div>
-                        <p class="text-gray-400 text-sm sm:text-base">
+                        <p
+                          data-aos="fade-down"
+                          class="text-gray-400 text-sm sm:text-base"
+                        >
                           Sunrise
                         </p>
-                        <p class="text-lg sm:text-xl">6:00 AM</p>
+                        <p data-aos="fade-up" class="text-lg sm:text-xl">
+                          6:00 AM
+                        </p>
                       </div>
                     </div>
                     <div class="flex items-center">
                       <svg
+                        data-aos="fade-right"
                         class="h-6 w-6 sm:h-7 sm:w-7 mr-3 text-orange-400"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -349,8 +397,15 @@
                         <circle cx="12" cy="7" r="4" />
                       </svg>
                       <div>
-                        <p class="text-gray-400 text-sm sm:text-base">Sunset</p>
-                        <p class="text-lg sm:text-xl">6:00 PM</p>
+                        <p
+                          data-aos="fade-down"
+                          class="text-gray-400 text-sm sm:text-base"
+                        >
+                          Sunset
+                        </p>
+                        <p data-aos="fade-up" class="text-lg sm:text-xl">
+                          6:00 PM
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -370,7 +425,10 @@
             class="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 w-full"
           >
             <!-- Image Container -->
-            <div class="w-full md:w-1/2 overflow-hidden rounded-2xl">
+            <div
+              data-aos="fade-right"
+              class="w-full md:w-1/2 overflow-hidden rounded-2xl"
+            >
               <img
                 src="https://cms.code4rest.com/wp128/wp-content/uploads/2024/11/Rainy-img.jpg"
                 alt="Weather map showing rainy conditions"
@@ -380,10 +438,17 @@
 
             <!-- Text Content -->
             <div class="w-full md:w-1/2 p-4 sm:p-6 md:p-8 text-black">
-              <h2 class="text-5xl font-bold mb-4 uppercase tracking-wide">
+              <h2
+                data-aos="fade-left"
+                class="text-5xl font-bold mb-4 uppercase tracking-wide"
+              >
                 Rainy days bring out the best puddles
               </h2>
-              <p class="text-base sm:text-lg md:text-[1.2rem] mb-6">
+              <p
+                data-aos="fade-left"
+                data-aos-delay="200"
+                class="text-base sm:text-lg md:text-[1.2rem] mb-6"
+              >
                 There are many variations of passages of available, but majority
                 have suffered alteration in some form, by injected words which
                 don’t look even slightly believable
@@ -391,16 +456,18 @@
 
               <!-- Weather Info List -->
               <ul class="list-disc pl-5 mb-6 text-base sm:text-lg">
-                <li>UV Index</li>
-                <li>Wind Speed</li>
-                <li>Sunrise & set</li>
-                <li>Humidity</li>
-                <li>Visibility</li>
-                <li>Air Speed</li>
+                <li data-aos="fade-left" data-aos-delay="300">UV Index</li>
+                <li data-aos="fade-left" data-aos-delay="400">Wind Speed</li>
+                <li data-aos="fade-left" data-aos-delay="500">Sunrise & set</li>
+                <li data-aos="fade-left" data-aos-delay="600">Humidity</li>
+                <li data-aos="fade-left" data-aos-delay="700">Visibility</li>
+                <li data-aos="fade-left" data-aos-delay="800">Air Speed</li>
               </ul>
 
               <!-- More Info Button -->
               <button
+                data-aos="fade-left"
+                data-aos-delay="900"
                 class="bg-orange-500 text-white font-bold py-3 px-6 rounded-full hover:bg-orange-600 transition-colors cursor-pointer"
               >
                 More Info
@@ -416,22 +483,25 @@
         class="py-16 container mx-auto px-4 sm:px-6 lg:px-8"
       >
         <div class="text-center mb-10">
-          <h2 class="text-3xl font-bold text-gray-900 mb-2">
+          <h2
+            data-aos="fade-down"
+            class="text-3xl font-bold text-gray-900 mb-2"
+          >
             Cambodia Forecast
           </h2>
-          <p class="text-gray-600 max-w-2xl mx-auto">
+          <p data-aos="fade-up" class="text-gray-600 max-w-2xl mx-auto">
             It is a long established fact that a reader will be distracted by
             the readable content of a page when looking at its layout.
           </p>
         </div>
 
         <!-- First row of province cards -->
-        <div id="first-row">
+        <div id="first-row" data-aos="fade-down" data-aos-delay="200">
           <!-- Province cards will be dynamically inserted here -->
         </div>
 
         <!-- Second row of province cards -->
-        <div id="second-row">
+        <div id="second-row" data-aos="fade-down" data-aos-delay="200">
           <!-- Province cards will be dynamically inserted here -->
         </div>
       </section>
@@ -573,9 +643,12 @@
     </main>
 
     <script src="./src/components/header/Header.js"></script>
-    <!-- <script src="./src/components/hero-home/Hero.js"></script> -->
     <script src="./src/components/Cambodia-Forecast/Cambodia-Forecast.js"></script>
     <script src="/src/components/WeatherOverview/weather.js"></script>
     <script src="./src//components/footer/Footer.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
