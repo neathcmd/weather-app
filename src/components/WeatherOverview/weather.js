@@ -79,22 +79,29 @@ function renderWeatherApp() {
 }
 
 // Update time every second
+function getCurrentTime() {
+  const today = new Date();
+  const day = today.getDate();
+  const month = today.toLocaleString("default", { month: "short" });
+  const hours = today.getHours().toString().padStart(2, "0");
+  const minutes = today.getMinutes().toString().padStart(2, "0");
+  return `Today, ${day} ${month}, ${hours}:${minutes}`;
+}
+
 function updateTime() {
   const timeElement = document.getElementById("current-time");
   if (!timeElement) return;
 
   const update = () => {
-    const today = new Date();
-    const day = today.getDate();
-    const month = today.toLocaleString("default", { month: "short" });
-    const hours = today.getHours().toString().padStart(2, "0");
-    const minutes = today.getMinutes().toString().padStart(2, "0");
-    timeElement.textContent = `Today, ${day} ${month}, ${hours}:${minutes}`;
+    timeElement.textContent = getCurrentTime();
   };
 
   update(); // Initial update
-  setInterval(update, 1000);
+  setInterval(update, 1000); // Update every second
 }
+
+// Call this when the DOM is ready
+document.addEventListener("DOMContentLoaded", updateTime);
 
 // Fetch weather data
 async function fetchWeatherData() {
@@ -235,7 +242,7 @@ function renderWeather(data) {
         <div class="flex justify-between items-center mb-4">
           <div>
             <h2 class="font-bold text-xl sm:text-2xl">${cityName}, ${countryCode}</h2>
-            <p id="current-time" class="text-gray-300 text-sm sm:text-base"></p>
+            <p id="current-time" class="text-gray-300 text-sm sm:text-base">${getCurrentTime()}</p> 
           </div>
           <img src="${weatherIcon}" alt="${weatherDescription}" class="w-12 h-12 sm:w-16 sm:h-16" />
         </div>

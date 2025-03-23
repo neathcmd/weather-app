@@ -3,82 +3,42 @@ const provinces = [
   {
     name: "Preah Province",
     image: "/src/assets/Pailin-Province.jpg",
-    lat: 12.8489,
-    lon: 102.6093,
-    weatherIcon: "☀️",
-    temperature: 32,
   },
   {
     name: "Battambang Province",
     image: "/src/assets/Battambang-Province.jpg",
-    lat: 13.0957,
-    lon: 103.2022,
-    weatherIcon: "⛅",
-    temperature: 31,
   },
   {
     name: "KohKong Province",
     image: "/src/assets/KohKong-Province.jpg",
-    lat: 11.9924,
-    lon: 105.4645,
-    weatherIcon: "🌧️",
-    temperature: 28,
   },
   {
     name: "Prey Veng Province",
     image: "/src/assets/PreyVeng-Province.jpg",
-    lat: 11.4868,
-    lon: 105.3253,
-    weatherIcon: "⛅",
-    temperature: 30,
   },
   {
     name: "Kampongchhang Province",
     image: "/src/assets/Kompongchhang-Province.jpg",
-    lat: 12.7111,
-    lon: 104.8887,
-    weatherIcon: "☀️",
-    temperature: 33,
   },
   {
     name: "PreahVihear Province",
     image: "/src/assets/PreyVeng-Province.jpg",
-    lat: 13.8, // Adding default coordinates
-    lon: 105.05,
-    weatherIcon: "☀️",
-    temperature: 29,
   },
   {
     name: "Mondulkiri Province",
     image: "/src/assets/Modulkiri-Province.jpg",
-    lat: 12.4555,
-    lon: 107.1878,
-    weatherIcon: "⛅",
-    temperature: 27,
   },
   {
     name: "Kep Province",
     image: "/src/assets/Kep-Province.jpg",
-    lat: 10.4833,
-    lon: 104.3167,
-    weatherIcon: "☀️",
-    temperature: 31,
   },
   {
     name: "Kampongspeu Province",
     image: "/src/assets/Kompongspeu-Province.jpg",
-    lat: 11.6155,
-    lon: 104.5209,
-    weatherIcon: "⛅",
-    temperature: 30,
   },
   {
     name: "KompongThom Province",
     image: "/src/assets/KompongThom-Province.jpg",
-    lat: 11.6155,
-    lon: 104.5209,
-    weatherIcon: "☀️",
-    temperature: 32,
   },
 ];
 
@@ -97,22 +57,28 @@ function createProvinceCard(province) {
   img.className = "w-full h-full object-cover rounded-full";
   imageContainer.appendChild(img);
 
+  // not use code
   const weatherIcon = document.createElement("div");
   weatherIcon.className = "text-xl sm:text-2xl mb-1 sm:mb-2";
-  weatherIcon.textContent = province.weatherIcon || "🌥️";
+  weatherIcon.textContent = province.weatherIcon || "";
 
   const name = document.createElement("p");
   name.className =
     "text-xs sm:text-sm font-medium text-gray-800 text-center leading-tight";
   name.textContent = province.name;
 
+  // not use code
   const temp = document.createElement("p");
   temp.className = "text-xs text-gray-600 mt-1";
-  temp.textContent = province.temperature ? `${province.temperature}°C` : "N/A";
+  temp.textContent = province.temperature ? `${province.temperature}°C` : "";
 
   card.appendChild(imageContainer);
+  // not use code
   card.appendChild(weatherIcon);
+
   card.appendChild(name);
+
+  // not use code
   card.appendChild(temp);
 
   return card;
